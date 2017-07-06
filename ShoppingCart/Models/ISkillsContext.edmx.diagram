@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="55fb096e67524f03b1963f95b4d84037" Name="Diagram1">
+        <EntityTypeShape EntityType="ISkillsDb.mdfModel.Customer" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISkillsDb.mdfModel.OrderItem" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISkillsDb.mdfModel.Order" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISkillsDb.mdfModel.Product" Width="1.5" PointX="7.5" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="ISkillsDb.mdfModel.FK_dbo_Orders_dbo_Customers_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="ISkillsDb.mdfModel.FK_dbo_OrderItems_dbo_Orders_OrderID" ManuallyRouted="false" />
+        <AssociationConnector Association="ISkillsDb.mdfModel.FK_dbo_OrderItems_dbo_Products_ProductID" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ISkillsDb.mdfModel.Category" Width="1.5" PointX="4" PointY="4.25" />
+        <AssociationConnector Association="ISkillsDb.mdfModel.FK_Products_Categories" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
