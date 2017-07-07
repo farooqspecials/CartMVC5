@@ -13,9 +13,9 @@ namespace ShoppingCart.Controllers
         private const int PAGE_SIZE = 3;
 
         // GET: Shop
-        public ActionResult Index(int page=1, int categoryID = 0)
+        public ActionResult Index(int page=1, int categoryID = 0 , string searchString="")
         {
-           return View(GetModel(page, categoryID));
+           return View(GetModel(page, categoryID, searchString));
 
         }
 
@@ -24,12 +24,15 @@ namespace ShoppingCart.Controllers
         {
             int page = 1;
             int categoryID = productsModel.CategoryId;
-            return View(GetModel(page, categoryID));
+           // productsModel.CategoryId = db.Categories.Select(p => p.CategoryId).FirstOrDefault();
+            string searchString = productsModel.SearchString;
+            return View(GetModel(page, categoryID, searchString));
         }
 
-        private ProductsModel GetModel(int page, int categoryID)
+        private ProductsModel GetModel(int page, int categoryID , string searchString)
         {
-            var data = db.Products.Select(p => p).Where(p => categoryID == 0 || p.CategoryId == categoryID)
+            var data = db.Products.Select(p => p).Where(p => categoryID == 0 || p.CategoryId == categoryID).Where (p=>string.IsNullOrEmpty(searchString) || p.Description.Contains(searchString))
+              
                         .OrderBy(p => p.ProductName)
                         .Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE);
 
@@ -44,7 +47,7 @@ namespace ShoppingCart.Controllers
                     db.Products.Count() :
                     db.Products.Select(p => p).Where(p => p.CategoryId == categoryID).Count()
                 },
-                CategoryId = categoryID
+              //  CategoryId = categoryID
             };
 
             return model;

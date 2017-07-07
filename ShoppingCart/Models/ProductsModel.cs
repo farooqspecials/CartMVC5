@@ -13,6 +13,8 @@ namespace ShoppingCart.Models
 
         public int CategoryId { get; set; }
 
+        public String SearchString { get; set; }
+
         public SelectList Categories()
         {
             ISkillsEntities db = new ISkillsEntities();

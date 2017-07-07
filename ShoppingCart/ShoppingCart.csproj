@@ -160,11 +160,11 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\Shop\Index.cshtml" />
-    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemDetailController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -206,6 +206,9 @@
       <DependentUpon>ISkillsContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductsModel.cs" />
+    <Compile Include="Models\ShoppingCartItemModel.cs" />
+    <Compile Include="Models\ShoppingCartModel.cs" />
+    <Compile Include="Models\ShoppingCartViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +233,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\ItemDetail\Index.cshtml" />
     <Content Include="Views\Shop\Product.cshtml" />
+    <Content Include="Views\ShoppingCart\CartWidgte.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

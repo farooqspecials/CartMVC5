@@ -10,13 +10,14 @@
 <body>
     <div class="navbar navbar-inverse" role="navigation">
         <h1 id="header" class="navbar-text h1">ISkills Store</h1>
+        @Html.Action("CartWidgte", "ShoppingCart")
     </div>
 
     <div class="col-xs-2 well">
         <ul>
             <li class="btn btn-block btn-default btn-lg">@Html.ActionLink("Home", "Index", "Home")</li>
             <li class="btn btn-block btn-default btn-lg">@Html.ActionLink("Shop", "Index", "Shop")</li>
-            <li class="btn btn-block btn-default btn-lg">@Html.ActionLink("Cart", "Index", "Cart")</li>
+            <li class="btn btn-block btn-default btn-lg">@Html.ActionLink("Cart", "Index", "ShoppingCart")</li>
             <li class="btn btn-block btn-default btn-lg">@Html.ActionLink("Login", "Index", "Login")</li>
             <li class="btn btn-block btn-default btn-lg">@Html.ActionLink("Register", "Index", "Register")</li>
         </ul>
